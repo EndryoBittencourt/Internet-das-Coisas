@@ -1,0 +1,69 @@
+C++
+
+Sintaxe
+
+#include <nome_da_biblioteca>
+int main ()
+[...]
+-------------------------------------------------------
+-Para aplicar uma biblioteca utiliza-se "#include"
+-Biblioteca stdio.h(string) permite a utilização de diversos comandos(Entrada e Saída)
+---------------------------------------------------------------------------------------
+Declaração de variáveis
+
+-Int(Números inteiros) Ex:Produtos no estoque
+-Float(Números reais)   Ex:Nota escolar
+-Char(Para um caractere) Ex:Sexo - F ou M
+---------------------------------------------------------------------------------------
+-Não possui dados booleanos (True/False)
+-Linguagem C não pussui tipo especial para armazenar cadeias de caracteres
+
+
+-------------------
+
+
+Constante não pode ser alterado após a execução do programa
+
+"#Define nome_do_valor"
+
+Ex:
+
+#define x 7
+Identificador x,numero 7
+
+Armazenar uma cadeira de caracteres dentro de uma variável
+
+(strccopy(nome,"joao"));
+
+Para declarar "strccopy" precisa do "stdio.h(string)"
+
+--------------------
+
+Comando de entrada(Dados recebidos armazenados em variáveis)
+Um dos comandos de entrada é "scanf"
+
+Ex:
+
+scanf("%d%*c",&X);
+
+Um valor inteiro,digitado pelo usuário,será armazenado na variável X
+
+scanf("%f%*c",&Z);
+
+
+scanf("%s%*c",&NOME);
+Um ou mais caracteres,digitados pelo usuários,serão armazenados na variável NOME
+
+scanf("%s%*c",&NOME);
+Um caractere,
+
+------------------------
+%f -Armazenam números reais
+%d Números inteiros
+%c um único caractere
+%s um conjunto de caracteres
+
+
+
+
+
