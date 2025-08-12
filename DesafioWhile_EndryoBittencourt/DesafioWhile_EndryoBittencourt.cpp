@@ -1,5 +1,4 @@
 #include <stdio.h>
-
 int main() {
 float preco_unitario, custo_estocagem, imposto, preco_final;
 char refrigeracao, categoria;
@@ -11,21 +10,47 @@ int qtd_barato = 0, qtd_normal = 0, qtd_caro = 0;
 
 while (i < 12) {
 printf("\nProduto %d:\n", i+1);
-printf("Digite o preço unitário: ");
-scanf("%f", &preco_unitario);
-printf("Digite a refrigeração (S/N): ");
+
+int valido;
+do {
+printf("Digite o preco: ");
+valido = scanf("%f", &preco_unitario);
+
+while(getchar() != '\n');
+
+if(valido != 1 || preco_unitario <= 0) {
+printf("Erro: Digite um numero valido maior que 0!\n");
+}
+} while(valido != 1 || preco_unitario <= 0);
+
+do {
+printf("Digite a refrigeracao (S/N): ");
 scanf(" %c", &refrigeracao);
-printf("Digite a categoria (A/L/V): ");
-scanf(" %c", &categoria);
+while(getchar() != '\n');
 
 if (refrigeracao == 's') refrigeracao = 'S';
 else if (refrigeracao == 'n') refrigeracao = 'N';
+
+if (refrigeracao != 'S' && refrigeracao != 'N') {
+printf("Erro: Digite apenas S ou N!\n");
+}
+} while (refrigeracao != 'S' && refrigeracao != 'N');
+
+do {
+printf("Digite a categoria (A/L/V): ");
+scanf(" %c", &categoria);
+while(getchar() != '\n'); 
 
 if (categoria == 'a') categoria = 'A';
 else if (categoria == 'l') categoria = 'L';
 else if (categoria == 'v') categoria = 'V';
 
-custo_estocagem = 0; 
+if (categoria != 'A' && categoria != 'L' && categoria != 'V') {
+printf("Erro: Digite apenas A, L ou V!\n");
+}
+} while (categoria != 'A' && categoria != 'L' && categoria != 'V');
+
+custo_estocagem = 0;
 
 if (preco_unitario <= 20) {
 if (categoria == 'A') custo_estocagem = 2.00;
